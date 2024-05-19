@@ -1,4 +1,10 @@
-<?php include '../constants.php'; ?>
+<?php
+include '../constants.php';
+
+if (!defined('DB_HOST') || !defined('DB_USER') || !defined('DB_PSWD') || !defined('DB_NAME')) {
+    die("Errore: costanti di connessione non definite correttamente. Controlla che nella cartella app/ sia presente il file constants.php");
+}
+?>
 
 <!DOCTYPE html>
 <html>

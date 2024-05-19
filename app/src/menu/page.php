@@ -1,9 +1,5 @@
 <?php
 
-if (!defined('DB_HOST') || !defined('DB_USER') || !defined('DB_PSWD') || !defined('DB_NAME')) {
-    die("Errore: costanti di connessione non definite correttamente.");
-}
-
 try {
     $conn = new mysqli(DB_HOST, DB_USER, DB_PSWD, DB_NAME);
 } catch (Exception $e) {
