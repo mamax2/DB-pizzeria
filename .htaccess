@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Condizione: Se il file o la directory non esiste
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Regola: Reindirizza tutte le altre richieste a index.php
+RewriteRule ^(.*)$ app/src/index.php [L,QSA]
