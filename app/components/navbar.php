@@ -1,27 +1,27 @@
 <?php
-echo $_GET['redirect'];
-switch ($_GET['redirect']) {
-    case "menu":
-        header('Location: http://localhost/menu');
-        exit();
-        break;
-    case "sala":
-        header('Location: http://localhost/sala');
-        exit();
-        break;
-    case "cucina":
-        header('Location: http://localhost/cucina');
-        exit();
-        break;
-    case "magazzino":
-        header('Location: http://localhost/magazzino');
-        exit();
-        break;
-    case "login":
-        header('Location: http://localhost/login');
-        exit();
-        break;
-}
+if (isset($_GET['redirect']))
+    switch ($_GET['redirect']) {
+        case "menu":
+            header('Location: http://localhost/menu');
+            exit();
+            break;
+        case "sala":
+            header('Location: http://localhost/sala');
+            exit();
+            break;
+        case "cucina":
+            header('Location: http://localhost/cucina');
+            exit();
+            break;
+        case "magazzino":
+            header('Location: http://localhost/magazzino');
+            exit();
+            break;
+        case "login":
+            header('Location: http://localhost/login');
+            exit();
+            break;
+    }
 ?>
 
 <nav>
@@ -37,19 +37,19 @@ switch ($_GET['redirect']) {
 <style>
     nav {
         display: flex;
-        justify-content: space-around;
+        position: sticky;
+        justify-content: end;
+        align-items: center;
         flex-wrap: nowrap;
-        padding: 20px;
-    }
+        padding: 10px;
+        top: 0;
 
-    button,
-    input[type=submit] {
-        padding: 5px 20px;
-        border-radius: 9999px;
-        border: none;
-    }
+        height: clamp(80px, 80px, 80px);
 
-    button:active {
-        background: none;
+        background: rgba(255, 255, 255, 0.599);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.42);
     }
 </style>
